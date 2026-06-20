@@ -10,23 +10,19 @@ Toda la evaluación de victoria, derrota o viabilidad de misiones no se programa
 
 ---
 
-## Estructura del Repositorio
+## Flujo del Proyecto
 
-```text
-juego_laravel/
-├── app/
-│   ├── Http/
-│   │   └── Controllers/
-│   │       └── GameController.php    <-- Intermediario PHP-Prolog
-├── public/
-├── resources/
-│   └── views/
-│       └── game.blade.php            <-- Interfaz gráfica del simulador
-├── routes/
-│   └── web.php                       <-- Definición de rutas web
-├── .env
-├── README.md
-└── Actividad_extra.pl                <-- Base de conocimientos lógicos (Motor Prolog)
+> **Usuario final selecciona su equipo en la interfaz**
+> ⬇
+> **Elección de acción: Enviar a Misión o Iniciar Batalla**
+> ⬇
+> **Laravel formatea los datos y ejecuta el comando en la terminal**
+> ⬇
+> **Prolog evalúa hechos y reglas lógicas (Niveles, objetos, recursividad)**
+> ⬇
+> **Prolog genera un reporte gramaticalmente correcto**
+> ⬇
+> **Laravel captura la salida estándar y la muestra en la consola virtual**
 
 ---
 
@@ -45,7 +41,8 @@ juego_laravel/
 
 ## Estructura del Repositorio
 
-acceso-estadio-laravel/
+```text
+juego_laravel/
 ├── app/
 │   ├── Http/
 │   │   └── Controllers/
@@ -59,7 +56,7 @@ acceso-estadio-laravel/
 ├── .env
 ├── README.md
 └── Actividad_extra.pl                <-- Base de conocimientos lógicos (Motor Prolog)
-
+```
 
 ---
 
@@ -128,26 +125,30 @@ En lugar de una base de datos relacional (SQL), el sistema utiliza predicados y 
 Debes tener instalado **PHP**, **Composer** y **SWI-Prolog** (asegurándote de que el comando `swipl` esté agregado a las variables de entorno/PATH de tu sistema).
 
 **1. Clonar el repositorio**
+```bash
 git clone [tu-enlace-de-github]
 cd juego_laravel
-
+```
 
 **2. Instalar dependencias de Laravel**
+```bash
 composer install
-
+```
 
 **3. Configurar entorno y generar clave**
+```bash
 copy .env.example .env
 php artisan key:generate
-
+```
 
 **4. Configurar Ruta del Motor Lógico**
 Abre el archivo `app/Http/Controllers/GameController.php` y asegúrate de que la variable `$pathProlog` apunte a la ubicación exacta del archivo `Actividad_extra.pl` en tu máquina local.
 
 **5. Levantar el servidor**
+```bash
 php artisan serve
-
-La aplicación quedará disponible en: http://127.0.0.1:8000
+```
+La aplicación quedará disponible en: `http://127.0.0.1:8000`
 
 ---
 
