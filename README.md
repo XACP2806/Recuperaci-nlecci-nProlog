@@ -10,19 +10,23 @@ Toda la evaluación de victoria, derrota o viabilidad de misiones no se programa
 
 ---
 
-## Flujo del Proyecto
+## Estructura del Repositorio
 
-> **Usuario final selecciona su equipo en la interfaz**
-> ⬇
-> **Elección de acción: Enviar a Misión o Iniciar Batalla**
-> ⬇
-> **Laravel formatea los datos y ejecuta el comando en la terminal**
-> ⬇
-> **Prolog evalúa hechos y reglas lógicas (Niveles, objetos, recursividad)**
-> ⬇
-> **Prolog genera un reporte gramaticalmente correcto**
-> ⬇
-> **Laravel captura la salida estándar y la muestra en la consola virtual**
+```text
+juego_laravel/
+├── app/
+│   ├── Http/
+│   │   └── Controllers/
+│   │       └── GameController.php    <-- Intermediario PHP-Prolog
+├── public/
+├── resources/
+│   └── views/
+│       └── game.blade.php            <-- Interfaz gráfica del simulador
+├── routes/
+│   └── web.php                       <-- Definición de rutas web
+├── .env
+├── README.md
+└── Actividad_extra.pl                <-- Base de conocimientos lógicos (Motor Prolog)
 
 ---
 
